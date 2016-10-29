@@ -1,5 +1,5 @@
 {
 	"PORT": "COM3",
-	"BAUDRATE": 9600, //must be a number not a string
+	"BAUDRATE": 9600, 
 	"MONGODB_URL": "mongodb://localhost:27017/myproject"
 }
