@@ -1,0 +1,29 @@
+{
+  "name": "arduino-tempsensor",
+  "version": "1.0.0",
+  "description": "Simple temperature sensor with db for arduino",
+  "main": "tempReader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Apoyhtari/Arduino-TemperatureSensor.git"
+  },
+  "keywords": [
+    "arduino",
+    "temperature",
+    "mongodb"
+  ],
+  "author": "Aleksi Pöyhtäri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Apoyhtari/Arduino-TemperatureSensor/issues"
+  },
+  "homepage": "https://github.com/Apoyhtari/Arduino-TemperatureSensor#readme",
+  "dependencies": {
+    "jsonfile": "^2.4.0",
+    "mongodb": "^2.2.11",
+    "serialport": "^4.0.3"
+  }
+}
