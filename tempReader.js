@@ -2,10 +2,27 @@ var SerialPort = require('serialport');
 var jsonfile = require('fs');
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
+var express = require('express');
+var app = express();
+var path = require('path');
+var __projectRoot = __dirname + '/';
 var config = require('./config.json');
 
+app.use(express.static(__projectRoot));
+app.get('/', function (req, res) {
+    res.setHeader("Content-Type", "application/json");
+    res.send(temp);
+    res.sendFile(path.join(__projectRoot + '/index.html'));
+});
+console.log('Server up and running on http://localhost:3000/');
+app.listen(3000);
+
+app.get('/temp', function(req, res) {
+  res.json(temp);
+});
 // Database Connection URL
 var url = 'mongodb://localhost:27017/myproject';
+var temp;
 
 var obj = {};
 var port = new SerialPort(config.PORT, {baudrate: config.BAUDRATE, parser:SerialPort.parsers.readline("\r\n")});
@@ -28,6 +45,8 @@ function onData(data) {
  		temperature: data,
  		date: timeStamp
  	}
+  temp = data;
+  console.log(temp);
  	MongoClient.connect(config.MONGODB_URL, function(err, db) {
   		assert.equal(null, err);
   		insertDocument(db, function() {
