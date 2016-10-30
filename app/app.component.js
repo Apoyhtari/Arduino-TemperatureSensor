@@ -16,10 +16,13 @@ var AppComponent = (function () {
         this.result = { temp: [] };
         http.get('./temp').map(function (res) { return res.json(); }).subscribe(function (res) { return _this.result = res; }, function (error) { return _this.error = error; });
     }
+    AppComponent.prototype.alerter = function () {
+        console.log(this.result);
+    };
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: '<h1>Temperature is: {{this.result}}</h1>'
+            selector: 'temperature',
+            template: '<h1>Temperature is: {{this.result}}</h1><button (click)="alerter()">click me</button>'
         }), 
         __metadata('design:paramtypes', [http_1.Http])
     ], AppComponent);

@@ -46,7 +46,6 @@ function onData(data) {
  		date: timeStamp
  	}
   temp = data;
-  console.log(temp);
  	MongoClient.connect(config.MONGODB_URL, function(err, db) {
   		assert.equal(null, err);
   		insertDocument(db, function() {
