@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'temperature',
-  template: '<h1>Temperature is: {{this.result}}</h1><button (click)="alerter()">click me</button>'
+  template: './views/tempView.html'
 })
 export class AppComponent {
 	result: Object;

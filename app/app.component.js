@@ -22,7 +22,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'temperature',
-            template: '<h1>Temperature is: {{this.result}}</h1><button (click)="alerter()">click me</button>'
+            templateUrl: './views/tempView.html'
         }), 
         __metadata('design:paramtypes', [http_1.Http])
     ], AppComponent);
