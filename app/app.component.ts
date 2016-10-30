@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {Http, Response} from '@angular/http';
-import {Observable} from 'rxjs/Rx';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'temperature',
@@ -13,6 +13,6 @@ export class AppComponent {
         http.get('./temp').map((res: Response) => res.json()).subscribe(res => this.result = res, error => this.error = error);
     }
     alerter() {
-        console.log("clikc");
+        console.log("click");
     }
 }
