@@ -16,8 +16,11 @@ var AppComponent = (function () {
         this.result = { temp: [] };
         http.get('./temp').map(function (res) { return res.json(); }).subscribe(function (res) { return _this.result = res; }, function (error) { return _this.error = error; });
     }
-    AppComponent.prototype.alerter = function () {
-        console.log(this.result);
+    AppComponent.prototype.getData = function (http) {
+        var _this = this;
+        this.result = { temp: [] };
+        http.get('./temp').map(function (res) { return res.json(); }).subscribe(function (res) { return _this.result = res; }, function (error) { return _this.error = error; });
+        console.log(this._result);
     };
     AppComponent = __decorate([
         core_1.Component({

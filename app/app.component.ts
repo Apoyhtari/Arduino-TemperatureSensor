@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'temperature',
-  template: './views/tempView.html'
+  templateUrl: './views/tempView.html'
 })
 export class AppComponent {
 	result: Object;
@@ -12,7 +12,9 @@ export class AppComponent {
         this.result = {temp:[]};
         http.get('./temp').map((res: Response) => res.json()).subscribe(res => this.result = res, error => this.error = error);
     }
-    alerter() {
-        console.log("click");
+    getData(http: Http) {
+      this.result = {temp:[]};
+      http.get('./temp').map((res: Response) => res.json()).subscribe(res => this.result = res, error => this.error = error);
+      console.log(this._result);
     }
 }
