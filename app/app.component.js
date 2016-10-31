@@ -9,25 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
+var app_service_1 = require('./app.service');
 var AppComponent = (function () {
     function AppComponent(http) {
-        var _this = this;
-        this.result = { temp: [] };
-        http.get('./temp').map(function (res) { return res.json(); }).subscribe(function (res) { return _this.result = res; }, function (error) { return _this.error = error; });
+        this.http = http;
+         var _this = this;
+        http.getCurrentTemp()
+            .subscribe(function (data) { return _this.result = JSON.stringify(data); }, function (error) { return alert(error); }, function () { return console.log(_this.result); });
+        ;
     }
-    AppComponent.prototype.getData = function (http) {
+    AppComponent.prototype.getData = function () {
         var _this = this;
-        this.result = { temp: [] };
-        http.get('./temp').map(function (res) { return res.json(); }).subscribe(function (res) { return _this.result = res; }, function (error) { return _this.error = error; });
-        console.log(this._result);
+        this.http.getCurrentTemp()
+            .subscribe(function (data) { return _this.result = JSON.stringify(data); }, function (error) { return alert(error); }, function () { return console.log(_this.result); });
+        ;
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'temperature',
-            templateUrl: './views/tempView.html'
+            templateUrl: './views/tempView.html',
+            providers: [app_service_1.HeroService]
         }), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [app_service_1.HeroService])
     ], AppComponent);
     return AppComponent;
 }());
