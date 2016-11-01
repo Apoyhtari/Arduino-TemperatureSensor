@@ -20,6 +20,16 @@ app.listen(3000);
 app.get('/temp', function(req, res) {
   res.json(temp);
 });
+
+app.get('/graphs', function(req, res) {
+  res.json({message: 'under construction'});
+});
+
+app.get('/outside', function(req, res) {
+  res.setHeader("Content-Type", "application/json");
+    res.send(temp);
+    res.sendFile(path.join(__projectRoot + '/index.html'));
+});
 // Database Connection URL
 var url = 'mongodb://localhost:27017/myproject';
 var temp;
