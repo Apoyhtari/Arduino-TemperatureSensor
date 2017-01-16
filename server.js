@@ -17,11 +17,25 @@ console.log('Server up and running on http://localhost:3000/');
 app.listen(3000);
 
 app.get('/temp', function(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.json(temp);
 });
 
 app.get('/graphs', function(req, res) {
-  res.json({message: 'under construction'});
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  MongoClient.connect(config.MONGODB_URL, function(err, db) {
+    assert.equal(null, err);
+    getDocument(db, function() {
+      db.close();
+    });
+  });
+  var getDocument = function(db, callback) {
+    db.collection('tempData').find({}, {limit: 100}).sort({ date: -1 }).toArray(function(err, items) {
+      res.json(items);
+      callback();
+    });
+  };
+
 });
 
 app.get('/outside', function(req, res) {

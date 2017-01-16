@@ -1,5 +1,8 @@
-<h1>
-  {{title}}
-</h1>
-
+<md-toolbar color="primary">
+  <div class="navContainer">
+    <a [routerLink]="['']">Home</a>
+    <a [routerLink]="['tempin']">Outside temp</a>
+    <a [routerLink]="['charts']">charts</a>
+  </div>
+</md-toolbar>
 <router-outlet></router-outlet>
