@@ -18,10 +18,26 @@ app.listen(3000);
 
 app.get('/temp', function(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.json(temp);
+  MongoClient.connect(config.MONGODB_URL, function(err, db) {
+    assert.equal(null, err);
+    getDocument(db, function() {
+      db.close();
+    });
+  });
+  var getDocument = function(db, callback) {
+    db.collection('tempData').find({}, {'temperature': 1, limit: 1}).toArray(function(err, items) {
+      var temps = [];
+      for (i=0; i < items.length; i++) {
+        temps.push(items[i].obj.temperature);
+      }
+      console.log("found", items);
+      res.json(temps);
+      callback();
+    });
+  };
 });
 
-app.get('/graphs', function(req, res) {
+app.get('/graphdate', function(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   MongoClient.connect(config.MONGODB_URL, function(err, db) {
     assert.equal(null, err);
@@ -30,8 +46,34 @@ app.get('/graphs', function(req, res) {
     });
   });
   var getDocument = function(db, callback) {
-    db.collection('tempData').find({}, {limit: 100}).sort({ date: -1 }).toArray(function(err, items) {
-      res.json(items);
+    db.collection('tempData').find({}, {'temperature': 1, limit: 6}).toArray(function(err, items) {
+      var temps = [];
+      for (i=0; i < items.length; i++) {
+        temps.push(items[i].obj.date);
+      }
+
+      res.json(temps);
+      callback();
+    });
+  };
+
+});
+app.get('/graphdata', function(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  MongoClient.connect(config.MONGODB_URL, function(err, db) {
+    assert.equal(null, err);
+    getDocument(db, function() {
+      db.close();
+    });
+  });
+  var getDocument = function(db, callback) {
+    db.collection('tempData').find({}, {'temperature': 1, limit: 6}).toArray(function(err, items) {
+      var temps = [];
+      for (i=0; i < items.length; i++) {
+        temps.push(items[i].obj.temperature);
+      }
+
+      res.json(temps);
       callback();
     });
   };
@@ -46,7 +88,7 @@ app.get('/outside', function(req, res) {
 var url = 'mongodb://localhost:27017/myproject';
 var temp;
 
-var obj = {};
+var object = {};
 var port = new SerialPort(config.PORT, {baudrate: config.BAUDRATE, parser:SerialPort.parsers.readline("\r\n")});
 var file = './data/data.json';
 
@@ -62,6 +104,7 @@ function onOpen() {
 }
 
 function onData(data) {
+  console.log("data received");
  	var timeStamp = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
  	obj = {
  		temperature: data,
@@ -72,6 +115,7 @@ function onData(data) {
   		assert.equal(null, err);
   		insertDocument(db, function() {
   			db.close();
+
   		});
 	});
 }
@@ -80,6 +124,7 @@ function onData(data) {
 var insertDocument = function(db, callback) {
    db.collection('tempData').insertOne( {obj}, function(err, result) {
     assert.equal(err, null);
+     console.log("inserted", obj);
     callback();
   });
 };

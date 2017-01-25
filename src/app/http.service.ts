@@ -10,7 +10,11 @@ export class HttpService {
       .map((response: Response) => response.json());
   }
   getChartData () {
-    return this.http.get('http://localhost:3000/graphs')
+    return this.http.get('http://localhost:3000/graphData')
+      .map((response: Response) => response.json());
+  }
+  getChartDate () {
+    return this.http.get('http://localhost:3000/graphDate')
       .map((response: Response) => response.json());
   }
 }
