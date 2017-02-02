@@ -3,15 +3,24 @@
 <head>
   <meta charset="utf-8">
   <title>TempReader</title>
-  <base href="/">
+  <base href="./">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://www.google.com/jsapi"></script>
   <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+    const electron = require('electron');
+    var json = require('../streamConfig.json'); //with path
+    System.import('app').catch(function(err){ console.error(err); });
+  </script>
 </head>
 <body>
   <app-root>Loading...</app-root>
 </body>
+<script>
+  console.log("something");
+  console.log("this is what we want", json);
+</script>
 </html>

@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TempInComponent } from './temp-in/temp-in.component';
 import { ChartsComponent } from './charts/charts.component';
+import { WebviewDirective } from './webview.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TempInComponent,
-    ChartsComponent
+    ChartsComponent,
+    WebviewDirective
   ],
   imports: [
     BrowserModule,
