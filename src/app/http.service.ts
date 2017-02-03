@@ -17,4 +17,8 @@ export class HttpService {
     return this.http.get('http://localhost:3000/graphDate')
       .map((response: Response) => response.json());
   }
+  getAppSettings() {
+    return this.http.get('http://localhost:3000/appsettings')
+      .map((response: Response) => response.json());
+  }
 }

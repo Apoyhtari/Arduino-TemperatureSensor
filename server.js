@@ -7,12 +7,21 @@ var app = express();
 var path = require('path');
 var __projectRoot = __dirname + '/';
 var config = require('./config.json');
+var appSettings = require('./streamConfig.json')
 
 app.use(express.static(__projectRoot));
 app.get('/', function (req, res) {
     res.setHeader("Content-Type", "application/json");
     res.send(temp);
 });
+
+app.get('/appsettings', function (req, res) {
+  console.log(appSettings);
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.send(appSettings);
+});
+
 console.log('Server up and running on http://localhost:3000/');
 app.listen(3000);
 
