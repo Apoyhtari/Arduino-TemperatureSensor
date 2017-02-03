@@ -1,0 +1,14 @@
+{
+  "someStreams": [
+    "https://m.facebook.com",
+    "https://mobile.twitter.com/home"
+  ],
+  "newsStreams":[
+    "http://m.iltalehti.fi/",
+    "http://beta.ampparit.com/"
+  ],
+  "messengers": [
+    "https://web.whatsapp.com/",
+    "https://web.telegram.org/"
+  ]
+}
