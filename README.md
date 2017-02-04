@@ -10,7 +10,7 @@ Saturn-commandCenter let's you configure your feeds and disable the ones you don
 However this project is still at the starting point and will change over time a lot. Right now it has configuration and basic feed implemented with a simple server and arduino temperature sensor code.
 
 
-Future features:
+##Future features:
 
 Dashboard like software for all your home needs. for example social media feeds and news feeds which are configurable.
 frontend for the measurements including graphs etc.
@@ -21,6 +21,6 @@ Fully configurable.
 
 notifications and link support. 
 
-TODO: 
+##TODO: 
 Bundle backend with frontend to a single application.
 styling and UI fine tunings.
