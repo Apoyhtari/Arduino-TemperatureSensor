@@ -6,19 +6,3 @@ a {
 .navContainer {
   padding: 10px;
 }
-
-.feedContainer {
-  padding-left: 30px;
-  padding-right: 30px;
-  flex-direction: row;
-}
-
-.feedContainer webview {
-  display: block;       /* iframes are inline by default */
-  border: none;         /* Reset default border */
-  height: 80vh;        /* Viewport-relative units */
-  width: 95vw;
-  max-width: 800px;
-  max-height: 800px;
-  margin-left: 30px;
-}

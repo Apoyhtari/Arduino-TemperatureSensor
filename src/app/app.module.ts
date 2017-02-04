@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { TempInComponent } from './temp-in/temp-in.component';
 import { ChartsComponent } from './charts/charts.component';
 import { WebviewDirective } from './webview.directive';
+import { SomeComponent } from './some/some.component';
+import { MessengersComponent } from './messengers/messengers.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { WebviewDirective } from './webview.directive';
     HomeComponent,
     TempInComponent,
     ChartsComponent,
-    WebviewDirective
+    WebviewDirective,
+    SomeComponent,
+    MessengersComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
