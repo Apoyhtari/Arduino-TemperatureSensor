@@ -24,3 +24,5 @@ notifications and link support.
 ##TODO: 
 Bundle backend with frontend to a single application.
 styling and UI fine tunings.
+improve loading times of views now they are painfully slow
+messaging apps in the background + notifications
