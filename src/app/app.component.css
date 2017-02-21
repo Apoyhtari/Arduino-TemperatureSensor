@@ -6,3 +6,16 @@ a {
 .navContainer {
   padding: 10px;
 }
+
+.navContainer a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navContainer a:hover {
+  background-color: darkorchid;
+  border-radius: 6px;
+}

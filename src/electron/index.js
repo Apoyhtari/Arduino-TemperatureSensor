@@ -1,9 +1,5 @@
-/**
- * Created by Aleksi on 1.2.2017.
- */
-// src/electron.js
-
 const {app, BrowserWindow} = require('electron')
+var exec = require('child_process').exec;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -24,6 +20,8 @@ function createWindow () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
+    console.log("closing1")
+
     win = null
   })
 }
@@ -37,11 +35,21 @@ app.on('ready', createWindow)
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
+  //console.log("closing2")
+  //exec("pm2 stop all");
+  console.log("closing!")
+  var newProcess = exec("cmd pm2 stop all");
+  newProcess.on("exit", function () {
+    console.log("we ran this");
+  });
+  console.log("should have exec")
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
+app.on('before-quit', () => {
+})
 app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.

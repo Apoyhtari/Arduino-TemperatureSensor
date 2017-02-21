@@ -7,7 +7,7 @@ var app = express();
 var path = require('path');
 var __projectRoot = __dirname + '/';
 var config = require('./config.json');
-var appSettings = require('./streamConfig.json')
+var appSettings = require('./src/assets/streamConfig.json')
 
 app.use(express.static(__projectRoot));
 app.get('/', function (req, res) {

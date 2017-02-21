@@ -10,5 +10,9 @@
   "messengers": [
     "https://web.whatsapp.com/",
     "https://web.telegram.org/"
-  ]
+  ],
+  "components": {
+    "temp": false,
+    "charts": false
+  }
 }

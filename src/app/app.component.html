@@ -1,8 +1,8 @@
 <md-toolbar color="primary">
-  <div class="navContainer">
+  <div class="navContainer" *ngIf="items">
     <a [routerLink]="['']">Home</a>
-    <a [routerLink]="['tempin']">Outside temp</a>
-    <a [routerLink]="['charts']">charts</a>
+    <a *ngIf="items.components.temp == true"[routerLink]="['tempin']">Outside temp</a>
+    <a *ngIf="items.components.charts == true"[routerLink]="['charts']">charts</a>
     <a [routerLink]="['some']">social medias</a>
     <a [routerLink]="['news']">news</a>
     <a [routerLink]="['messengers']">messengers</a>
