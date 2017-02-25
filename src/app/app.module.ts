@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import {Ng2GoogleChartsModule} from 'ng2-google-charts';
+import {FlexLayoutModule} from '@angular/flex-layout/flexbox';
 
 import { ChartsModule } from 'ng2-charts';
 import {routing} from "./app.routing";
@@ -16,6 +17,9 @@ import { WebviewDirective } from './webview.directive';
 import { SomeComponent } from './some/some.component';
 import { MessengersComponent } from './messengers/messengers.component';
 import { NewsComponent } from './news/news.component';
+import { ComputerStatsComponent } from './left-utils/computer-stats/computer-stats.component';
+import { WeatherComponent } from './right-utils/weather/weather.component';
+import { SpotifyIntegrationComponent } from './left-utils/spotify-integration/spotify-integration.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { NewsComponent } from './news/news.component';
     WebviewDirective,
     SomeComponent,
     MessengersComponent,
-    NewsComponent
+    NewsComponent,
+    ComputerStatsComponent,
+    WeatherComponent,
+    SpotifyIntegrationComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,8 @@ import { NewsComponent } from './news/news.component';
     routing,
     MaterialModule,
     Ng2GoogleChartsModule,
-    ChartsModule
+    ChartsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

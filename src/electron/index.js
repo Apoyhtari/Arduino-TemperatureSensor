@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 var exec = require('child_process').exec;
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -24,8 +24,21 @@ function createWindow () {
 
     win = null
   })
+
+  win.webContents.on('dom-ready', () => {
+    console.log("done loading");
+    console.log("wooop");
+  })
+
+  win.webContents.on('did-navigate-in-page', () => {
+    console.log("navigate!");
+  })
 }
 
+  ipcMain.on('child:open', function(event) {
+    console.log('main.js :: ipc msg child:open received');
+   openChildWindow();
+  });
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked} from '@angular/core';
 import {HttpService} from "../http.service";
 
 @Component({
@@ -6,8 +6,9 @@ import {HttpService} from "../http.service";
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css']
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements OnInit, AfterViewChecked {
   items;
+  webView;
   constructor(private httpService: HttpService) {
   }
   ngOnInit(){
@@ -18,5 +19,12 @@ export class NewsComponent implements OnInit {
           console.log("something again");
           console.log(this.items);
         }));
+  }
+  ngAfterViewChecked() {
+    console.log(document.getElementById('foo'))
+    /*this.webView = document.getElementById('foo');
+    this.webView.addEventListener('dom-ready', () => {
+      console.log('finished loading the view');
+    })*/
   }
 }

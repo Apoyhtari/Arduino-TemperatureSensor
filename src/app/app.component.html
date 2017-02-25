@@ -8,4 +8,15 @@
     <a [routerLink]="['messengers']">messengers</a>
   </div>
 </md-toolbar>
-<router-outlet></router-outlet>
+<div class="flex-container" fxLayout="row">
+  <div fxLayout="column" class="left" fxFlex="20">
+    <app-computer-stats></app-computer-stats>
+    <app-spotify-integration></app-spotify-integration>
+  </div>
+  <div fxLayout="column" class="middle" fxFlex="60">
+    <router-outlet></router-outlet>
+  </div>
+  <div fxLayout="column" class="right" fxFlex="20">
+    <app-weather></app-weather>
+  </div>
+</div>

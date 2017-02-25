@@ -1,0 +1,34 @@
+<md-card>
+<div class="hero">
+  <div class="container">
+    <form action="#" class="find-location">
+      <input #term (keyup)="search(term.value)" type="text" placeholder="Find your location...">
+      <!-- <input type="submit" value="Find"> -->
+    </form>
+  </div>
+</div>
+
+<div class="forecast-table">
+  <div class="container" *ngIf="isVisible">
+    <div class="forecast-container">
+      <div class="today forecast">
+        <div class="forecast-header">
+          <div *ngIf="items" class="date">{{items.query.results.channel.item.forecast[0].date}}</div>
+        </div> <!-- .forecast-header -->
+        <div class="forecast-content">
+          <div class="location">{{ items.query?.results?.channel?.location?.city }}, {{ items.query?.results?.channel?.location?.country }}</div>
+          <div class="degree">
+            <div class="num">{{ items.query?.results?.channel?.item?.condition?.temp }}<sup>o</sup>F</div>
+            <!--<div class="forecast-icon">
+              <img src="../../../assets/icons/icon-1.svg" alt="" width=90>
+            </div>-->
+          </div>
+          <span><img src="../../../assets/icon-umberella.png" alt="">20%</span>
+          <span><img src="../../../assets/icon-wind.png" alt="">18km/h</span>
+          <span><img src="../../../assets/icon-compass.png" alt="">East</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</md-card>

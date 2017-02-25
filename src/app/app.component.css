@@ -1,3 +1,6 @@
+md-toolbar {
+  background-color: #3c3c6f!important;
+}
 a {
   color: white!important;
   text-decoration: none!important;
@@ -16,6 +19,23 @@ a {
 }
 
 .navContainer a:hover {
-  background-color: darkorchid;
+  background-color: #020204;
   border-radius: 6px;
+}
+
+.flex-container {
+  min-height: 600px;
+  height: 100%;
+}
+.middle {
+  min-width: 800px;
+}
+.left {
+  border-right: 1px solid #000;
+  padding-right: 10px;
+}
+
+.right {
+  border-left: 1px solid #000;
+  padding-left: 10px;
 }

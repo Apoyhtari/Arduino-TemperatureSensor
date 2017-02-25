@@ -2,8 +2,6 @@
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 
 .feedContainer {
-  padding-left: 30px;
-  padding-right: 30px;
   flex-direction: row;
 }
 
@@ -14,5 +12,33 @@
   width: 95vw;
   max-width: 800px;
   max-height: 800px;
-  margin-left: 30px;
+}
+
+* {
+  color: #ffffff;
+}
+body {
+  background-color: #151540;
+}
+
+md-card {
+  background-color: #3c3c6f!important;
+  border-radius: 6px!important;
+  margin-top: 1em;
+  color: #ffffff!important;
+}
+
+form.find-location.ng-untouched.ng-pristine.ng-valid input {
+  color: #000000!important;
+}
+
+input#md-input-1,
+md-input-container.mat-input-container,
+.mat-input-placeholder,
+.mat-input-underline{
+  color: #ffffff!important;
+}
+
+.mat-input-underline .mat-input-ripple {
+  background-color: #ffffff!important;
 }
