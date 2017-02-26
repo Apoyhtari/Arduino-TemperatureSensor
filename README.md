@@ -11,6 +11,7 @@ However this project is still at the starting point and will change over time a 
 
 ##Developing
 Clone repository
+
 run npm install 
 
 ##Building
@@ -30,7 +31,11 @@ notifications and link support.
 
 ##TODO: 
 -Bundle backend with frontend to a single application.
+
 -styling and UI fine tunings.
+
 -improve loading times of views because now they are painfully slow
+
 -messaging apps in the background + notifications
+
 -links that open
