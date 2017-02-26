@@ -9,6 +9,13 @@ Saturn-commandCenter let's you configure your feeds and disable the ones you don
 
 However this project is still at the starting point and will change over time a lot. Right now it has configuration and basic feed implemented with a simple server and arduino temperature sensor code.
 
+##Developing
+Clone repository
+run npm install 
+
+##Building
+I recommend to use electron-packager-interactive for building the executables
+Also electron-packager works
 
 ##Future features:
 
