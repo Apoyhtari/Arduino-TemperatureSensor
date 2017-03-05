@@ -20,6 +20,9 @@ import { NewsComponent } from './news/news.component';
 import { ComputerStatsComponent } from './left-utils/computer-stats/computer-stats.component';
 import { WeatherComponent } from './right-utils/weather/weather.component';
 import { SpotifyIntegrationComponent } from './left-utils/spotify-integration/spotify-integration.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SomeNavComponent } from './some/some-nav/some-nav.component';
+import { SomeContainerComponent } from './some/some-container/some-container.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { SpotifyIntegrationComponent } from './left-utils/spotify-integration/sp
     NewsComponent,
     ComputerStatsComponent,
     WeatherComponent,
-    SpotifyIntegrationComponent
+    SpotifyIntegrationComponent,
+    SettingsComponent,
+    SomeNavComponent,
+    SomeContainerComponent
   ],
   imports: [
     BrowserModule,

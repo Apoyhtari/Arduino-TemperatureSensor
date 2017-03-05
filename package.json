@@ -1,5 +1,5 @@
 {
-  "name": "temp-reader",
+  "name": "Saturn-Command-Center",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
@@ -42,6 +42,7 @@
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.24",
     "codelyzer": "~2.0.0-beta.1",
+    "electron-packager": "^8.5.2",
     "electron-sudo": "^4.0.12",
     "ipc": "0.0.1",
     "jasmine-core": "2.5.2",

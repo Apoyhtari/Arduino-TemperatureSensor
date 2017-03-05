@@ -1,10 +1,15 @@
 {
+  "SomeStreamNames": [
+    "facebook",
+    "twitter"
+  ],
   "someStreams": [
     "https://m.facebook.com",
     "https://mobile.twitter.com/home"
   ],
   "newsStreams":[
-    "http://beta.ampparit.com/"
+    "http://www.kaleva.fi",
+    "http://m.iltalehti.fi/"
   ],
   "messengers": [
     "https://web.whatsapp.com/",

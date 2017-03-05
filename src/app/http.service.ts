@@ -22,4 +22,12 @@ export class HttpService {
     return this.http.get('./assets/streamConfig.json')
       .map(res => this.data = res.json());
   }
+  getTotalMemory() {
+    return this.http.get('http://localhost:3000/totalmem')
+      .map((response: Response) => response.json());
+  }
+  getFreeMemory() {
+    return this.http.get('http://localhost:3000/memoryfree')
+      .map((response: Response) => response.json());
+  }
 }

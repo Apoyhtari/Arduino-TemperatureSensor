@@ -1,5 +1,11 @@
 <div *ngIf="this.items" class="feedContainer">
   <h1>Social Medias</h1>
+  <!--Not finished need to bind a router here to direct the webviews -->
+  <!--<md-toolbar color="primary">
+    <div class="navContainer" *ngIf="items">
+      <a *ngFor="let nav of items.SomeStreamNames">{{nav}}</a>
+    </div>
+  </md-toolbar>-->
   <webview *ngFor="let item of items.someStreams" id="foo" attr.src="{{item}}" style="display:inline-flex;" allowpopups disablewebsecurity autosize="on"></webview>
   <!--<webview id="bar" src="https://mobile.twitter.com/home" style="display:inline-flex; width:600px; height:800px" allowpopups disablewebsecurity></webview>
   <webview id="baz" src="https://web.whatsapp.com/" style="display:inline-flex; width:600px; height:800px"></webview>-->

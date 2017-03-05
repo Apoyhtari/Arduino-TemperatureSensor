@@ -10,23 +10,33 @@
   border: none;         /* Reset default border */
   height: 80vh;        /* Viewport-relative units */
   width: 95vw;
-  max-width: 800px;
-  max-height: 800px;
+  max-width: 950px;
+  max-height: 500px;
 }
 
 * {
-  color: #ffffff;
+
 }
 body {
-  background-color: #151540;
+  background: url('./assets/space_wallpaper_by_evobiohazard.jpg') no-repeat;
+  background-size: cover;
 }
-
+webview {
+  background-color: #ffffff;
+}
 md-card {
-  background-color: #3c3c6f!important;
+  background-color: #ffffff!important;
   border-radius: 6px!important;
   margin-top: 1em;
-  color: #ffffff!important;
+  opacity: 0.7;
+  color: #000000!important;
+
 }
+
+.search {
+  opacity: 0.7!important;
+}
+
 
 form.find-location.ng-untouched.ng-pristine.ng-valid input {
   color: #000000!important;
@@ -41,4 +51,14 @@ md-input-container.mat-input-container,
 
 .mat-input-underline .mat-input-ripple {
   background-color: #ffffff!important;
+}
+.md-input-placeholder {
+}
+
+.md-input-underline .md-input-ripple {
+  background-color: #ffffff;
+}
+
+.spotify-container {
+  width: 420px;
 }

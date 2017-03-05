@@ -1,5 +1,6 @@
 <md-card>
-  this will house the stats of the computer
+  <h4>Memory usage:</h4>
+  <p>{{freeMemory/1024/1024/1024 | number:'.2-2'}}GB / {{totalMemory /1024/1024/1024 | number:'.2-2'}}GB</p>
 </md-card>
 
 <md-card>
