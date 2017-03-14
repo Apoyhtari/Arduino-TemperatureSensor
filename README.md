@@ -14,10 +14,11 @@ Clone repository
 
 run npm install 
 
-##Building
+##Building'
 I recommend to use electron-packager-interactive for building the executables
 Also electron-packager works
 
+you can package the app with command 'electron-packager <built-folder> <app-name> --all --electron-version=<electron version>'
 ##Future features:
 
 Dashboard like software for all your home needs. for example social media feeds and news feeds which are configurable.
@@ -30,7 +31,6 @@ Fully configurable.
 notifications and link support. 
 
 ##TODO: 
--Bundle backend with frontend to a single application.
 
 -styling and UI fine tunings.
 
