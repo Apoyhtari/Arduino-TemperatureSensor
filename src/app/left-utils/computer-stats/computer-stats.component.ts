@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from "../../http.service";
+import {Observable} from 'rxjs/Rx';
 
 @Component({
   selector: 'app-computer-stats',
@@ -13,22 +14,20 @@ export class ComputerStatsComponent implements OnInit {
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
-    this.httpService.getTotalMemory()
+    setInterval(() =>this.httpService.getTotalMemory()
       .subscribe(
         (data => {
             this.items = data
             this.totalMemory = this.items.map(String)
-            console.log("total: ", this.totalMemory)
           }
-        ));
+        )), 5000);
 
-    this.httpService.getFreeMemory()
+    setInterval(() => this.httpService.getFreeMemory()
       .subscribe(
         (data => {
           this.freeMemory = data
-          console.log("Freeeeee!");
           console.log(this.freeMemory);
-        }));
+        })), 5000);
   }
 
 }

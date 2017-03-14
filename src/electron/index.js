@@ -22,18 +22,14 @@ function createWindow () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    console.log("closing1")
 
     win = null
   })
 
   win.webContents.on('dom-ready', () => {
-    console.log("done loading");
-    console.log("wooop");
   })
 
   win.webContents.on('did-navigate-in-page', () => {
-    console.log("navigate!");
   })
 }
 
@@ -52,12 +48,11 @@ app.on('window-all-closed', () => {
   // to stay active until the user quits explicitly with Cmd + Q
   //console.log("closing2")
   //exec("pm2 stop all");
-  console.log("closing!")
+
   var newProcess = exec("cmd pm2 stop all");
   newProcess.on("exit", function () {
     console.log("we ran this");
   });
-  console.log("should have exec")
   if (process.platform !== 'darwin') {
     app.quit()
   }

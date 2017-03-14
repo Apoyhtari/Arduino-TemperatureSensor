@@ -9,9 +9,16 @@
   display: block;       /* iframes are inline by default */
   border: none;         /* Reset default border */
   height: 80vh;        /* Viewport-relative units */
-  width: 95vw;
-  max-width: 950px;
-  max-height: 500px;
+  width: 73vw;
+  max-width: 1200px;
+  max-height: 800px;
+}
+
+app-messengers,
+app-news,
+app-some {
+  max-width: 1200px;
+  width: 100%;
 }
 
 * {
@@ -60,5 +67,7 @@ md-input-container.mat-input-container,
 }
 
 .spotify-container {
-  width: 420px;
+  display: inline-flex;
+  width: 375px;
+  padding: 2em;
 }
