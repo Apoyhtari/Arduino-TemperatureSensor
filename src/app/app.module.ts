@@ -46,10 +46,10 @@ import { SomeContainerComponent } from './some/some-container/some-container.com
     FormsModule,
     HttpModule,
     routing,
-    MaterialModule,
+    MaterialModule.forRoot(),
     Ng2GoogleChartsModule,
     ChartsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

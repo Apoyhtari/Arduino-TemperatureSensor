@@ -1,4 +1,16 @@
-md-toolbar {
+
+.md-primary {
+  background-color: white;
+  float: right;
+}
+
+md-icon {
+  color: #3c3c6f!important;
+}
+md-sidenav-container {
+  background: transparent;
+}
+md-sidenav {
   background-color: #3c3c6f!important;
 }
 a {
@@ -11,7 +23,7 @@ a {
 }
 
 .navContainer a {
-  display: inline-block;
+  display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -29,6 +41,7 @@ a {
 }
 .middle {
   min-width: 800px;
+  width: 100%;
 }
 .left {
   border-right: 1px solid #000;

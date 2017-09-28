@@ -1,4 +1,4 @@
-<md-toolbar color="primary">
+<!--<md-toolbar color="primary">
   <div class="navContainer" *ngIf="items">
     <a [routerLink]="['']">Home</a>
     <a *ngIf="items.components.temp == true" [routerLink]="['tempin']">Outside temp</a>
@@ -8,9 +8,28 @@
     <a [routerLink]="['messengers']">messengers</a>
     <a [routerLink]="['settings']">Settings</a>
   </div>
-</md-toolbar>
+</md-toolbar>-->
+<md-sidenav-container class="example-container" color="primary">
+  <md-sidenav #sidenav class="example-sidenav">
+    <div class="navContainer" *ngIf="items">
+      <a [routerLink]="['']">Home</a>
+      <a *ngIf="items.components.temp == true" [routerLink]="['tempin']">Outside temp</a>
+      <a *ngIf="items.components.charts == true" [routerLink]="['charts']">charts</a>
+      <a [routerLink]="['some']">social medias</a>
+      <a [routerLink]="['news']">news</a>
+      <a [routerLink]="['messengers']">messengers</a>
+      <a [routerLink]="['settings']">Settings</a>
+    </div>
+  </md-sidenav>
+
+  <div class="example-sidenav-content">
+     <button md-mini-fab class="example-fab" color="primary" (click)="sidenav.toggle()">
+      <md-icon>list</md-icon>
+    </button>
+  </div>
 <div class="flex-container" fxLayout="row">
   <div fxLayout="column" class="middle" fxFlex="100">
     <router-outlet></router-outlet>
   </div>
 </div>
+</md-sidenav-container>

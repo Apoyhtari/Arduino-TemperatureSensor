@@ -9,7 +9,7 @@
   display: block;       /* iframes are inline by default */
   border: none;         /* Reset default border */
   height: 80vh;        /* Viewport-relative units */
-  width: 50vw;
+  width: 45vw;
   max-width: 900px;
   max-height: 600px;
   margin-left: 20px;

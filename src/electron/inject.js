@@ -4,7 +4,7 @@ onload = () => {
     const {shell} = require('electron');
     //const webview = document.getElementById('app');
 
-    window.$ = window.jQuery = require('./jquery/jquery.min');
+    window.$ = window.jQuery = require('../bower_components/jquery/dist/jquery.min');
     console.log('loaded');
     $(document).ready(function() {
         $(document).on('click', 'a[target="_blank"]', function(e) {
