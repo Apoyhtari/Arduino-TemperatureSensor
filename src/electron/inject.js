@@ -1,0 +1,29 @@
+'use strict';
+
+onload = () => {
+    const {shell} = require('electron');
+    //const webview = document.getElementById('app');
+
+    window.$ = window.jQuery = require('./jquery/jquery.min');
+    console.log('loaded');
+    $(document).ready(function() {
+        $(document).on('click', 'a[target="_blank"]', function(e) {
+            console.log('should be doing something');
+            shell.openExternal($(this).prop('href'));
+            e.preventDefault();
+        });
+    });
+
+    // Doesn't look to be firing
+    /*webview.addEventListener('new-window', (e) => {
+        console.log('clicked');
+        const protocol = require('url').parse(e.url).protocol;
+        if (protocol === 'http:' || protocol === 'https:') {
+            shell.openExternal(e.url);
+        }
+    });*/
+    /*window.open = (url) => {
+     console.log('window.open clicked');
+     shell.openExternal(url);
+     };*/
+};

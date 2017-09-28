@@ -1,6 +1,6 @@
 <div *ngIf="this.items" class="feedContainer">
   <h1>News</h1>
-  <webview *ngFor="let item of items.newsStreams" id="foo" attr.src="{{item}}" style="display:inline-flex;" allowpopups disablewebsecurity autosize="on"></webview>
+  <webview *ngFor="let item of items.newsStreams" preload="../inject/inject.js" id="foo" attr.src="{{item}}" style="display:inline-flex;" allowpopups disablewebsecurity autosize="on"></webview>
   <!--<webview id="bar" src="https://mobile.twitter.com/home" style="display:inline-flex; width:600px; height:800px" allowpopups disablewebsecurity></webview>
   <webview id="baz" src="https://web.whatsapp.com/" style="display:inline-flex; width:600px; height:800px"></webview>-->
 

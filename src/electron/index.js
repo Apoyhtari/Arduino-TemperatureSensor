@@ -1,4 +1,4 @@
-const {app, BrowserWindow, ipcMain} = require('electron')
+const {app, BrowserWindow, ipcMain, shell} = require('electron')
 const server = require('./server');
 var exec = require('child_process').exec;
 
@@ -12,7 +12,7 @@ function createWindow () {
   win = new BrowserWindow({width: 1900, height: 1080})
 
   // and load the index.html of the app.
-  win.loadURL(`file://${__dirname}/index.html`)
+  win.loadURL(`file://E://projektit//dist/index.html`)
 
   // Open the DevTools.
   //win.webContents.openDevTools()

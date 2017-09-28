@@ -19,4 +19,11 @@ export class MessengersComponent implements OnInit {
           console.log(this.items);
         }));
   }
+  ngAfterViewChecked() {
+    console.log(document.getElementById('foo'))
+    /*this.webView = document.getElementById('foo');
+    this.webView.addEventListener('dom-ready', () => {
+      console.log('finished loading the view');
+    })*/
+  }
 }
