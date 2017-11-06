@@ -8,6 +8,7 @@ import {HttpService} from "../http.service";
 })
 export class MessengersComponent implements OnInit {
   items;
+  injectScript: string;
   constructor(private httpService: HttpService) {
   }
   ngOnInit(){
@@ -17,6 +18,7 @@ export class MessengersComponent implements OnInit {
           this.items = data
           console.log("something again");
           console.log(this.items);
+          this.getInjectRule();
         }));
   }
   ngAfterViewChecked() {
@@ -25,5 +27,16 @@ export class MessengersComponent implements OnInit {
     this.webView.addEventListener('dom-ready', () => {
       console.log('finished loading the view');
     })*/
+  }
+  getInjectRule() {
+    this.injectScript = './inject.js';
+    for (let i = 0; i < this.items.length; i++) {
+      if(this.items[i].indexof('slack') >= 0){
+        console.log('slack found');
+        this.injectScript = '';
+      } else {
+        this.injectScript = './inject.js'
+      }
+    }
   }
 }
